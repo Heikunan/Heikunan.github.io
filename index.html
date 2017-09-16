@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <title>Interview</title>
+      <title>README</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -207,8 +207,192 @@ code.language-yaml {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
-      <h1 class="mume-header" id="&#x6280;&#x672F;&#x9762;&#x8BD5;">技术面试</h1>
+      <h1 class="mume-header" id="&#x7FBD;&#x6BDB;&#x7403;&#x9986;">羽毛球馆</h1>
 
+<blockquote>
+<p>2017年ThoughtWorks校园招聘     完成人:  童天相</p>
+</blockquote>
+<p><strong>首先感谢您在百忙中抽出时间来检查我的代码作业！</strong></p>
+<h2 class="mume-header" id="&#x9879;&#x76EE;&#x76EE;&#x5F55;">项目目录</h2>
+
+<p><img src="img/menu.png" alt="&#x9879;&#x76EE;&#x76EE;&#x5F55;"></p>
+<ul>
+<li>入口文件为index.js</li>
+<li>spec是测试文件夹，主要对组件进行单元测试</li>
+<li>Component是项目运行的组件的文件夹，里面含有四个JS文件
+<ol>
+<li><code>isCorrect.js</code>为验证用户输入的组件</li>
+<li><code>writeDate.js</code>为写入用户订单数据的组件，接受<code>isCorrect.js</code>传过来的数据并写入<code>index.js</code>的全局变量内</li>
+<li><code>cancelBook.js</code>为写入用户取消订单的组件，接受全局变量为参数，并修改全局变量</li>
+<li><code>printIncome.js</code>为输出收入汇总的组件，接受全局变量为参数，输出收入汇总</li>
+</ol>
+</li>
+</ul>
+<h2 class="mume-header" id="&#x5173;&#x4E8E;&#x8FD0;&#x884C;&#x4E3B;&#x7A0B;&#x5E8F;">关于运行主程序</h2>
+
+<p>该项目使用了两个JS的库分别是<code>jasmine</code>和<code>readline-sync</code><br>
+所以在项目开始前先安装依赖的库<br>
+注意：<code>&gt;</code> 开头表示命令⾏</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token operator">></span> npm install
+<span class="token operator">></span> npm start
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></pre>
+<p>在运行主程序后可以运行help命令</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token operator">></span> help
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></pre>
+<p>系统会输出支持的命令</p>
+<h2 class="mume-header" id="&#x9879;&#x76EE;&#x8FD0;&#x884C;&#x7ED3;&#x679C;">项目运行结果</h2>
+
+<h3 class="mume-header" id="&#x6D4B;&#x8BD5;1">测试1</h3>
+
+<p><img src="img/test1.jpg" alt="&#x6D4B;&#x8BD5;1"></p>
+<h3 class="mume-header" id="&#x6D4B;&#x8BD5;2">测试2</h3>
+
+<p><img src="img/test2.jpg" alt="&#x6D4B;&#x8BD5;2"></p>
+<h2 class="mume-header" id="&#x5173;&#x4E8E;&#x8FD0;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;">关于运行单元测试</h2>
+
+<p>注意：<code>&gt;</code> 开头表示命令⾏</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token operator">></span> npm test
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></pre>
+<p>先写了测试，再写函数，最终四个函数都通过测试</p>
+<ul>
+<li><input type="checkbox" class="task-list-item-checkbox" checked> <code>writeData.js</code></li>
+<li><input type="checkbox" class="task-list-item-checkbox" checked> <code>isCorrect.js</code></li>
+<li><input type="checkbox" class="task-list-item-checkbox" checked> <code>printIncome.js</code></li>
+<li><input type="checkbox" class="task-list-item-checkbox" checked> <code>cancelBook.js</code></li>
+</ul>
+<h2 class="mume-header" id="&#x9879;&#x76EE;&#x7684;&#x6570;&#x636E;&#x5173;&#x7CFB;">项目的数据关系</h2>
+
+<p><code>index.js</code>全局变量</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token punctuation">{</span>
+    <span class="token string">"A"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+        <span class="token string">"2017-08-01"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"today"</span><span class="token punctuation">:</span><span class="token string">"workday"</span><span class="token punctuation">,</span>
+            <span class="token string">"usedTime"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"18:00~20:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"cancelled"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"19:00~22:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"U003"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"18:00~20:00"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"B"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+        <span class="token string">"2017-08-02"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token string">"today"</span><span class="token punctuation">:</span><span class="token string">"workday"</span><span class="token punctuation">,</span>
+            <span class="token string">"usedTime"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"13:00~17:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"U003"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"13:00~17:00"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>isCorrect.js</code>接受的数据</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token comment" spellcheck="true">//用户预定订单</span>
+U123 <span class="token number">2017</span><span class="token operator">-</span><span class="token number">6</span><span class="token operator">-</span><span class="token number">10</span> <span class="token number">9</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token operator">~</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">00</span> A
+<span class="token comment" spellcheck="true">//用户取消订单</span>
+U123 <span class="token number">2017</span><span class="token operator">-</span><span class="token number">6</span><span class="token operator">-</span><span class="token number">10</span> <span class="token number">9</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token operator">~</span><span class="token number">12</span><span class="token punctuation">:</span><span class="token number">00</span> A C
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+<p><code>isCorrect.js</code>输出的数据</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token comment" spellcheck="true">//用户取消订单</span>
+<span class="token punctuation">{</span> 
+  data<span class="token punctuation">:</span><span class="token punctuation">{</span> 
+     user<span class="token punctuation">:</span> <span class="token string">'u123'</span><span class="token punctuation">,</span>
+     date<span class="token punctuation">:</span> <span class="token string">'2016-06-04'</span><span class="token punctuation">,</span>
+     time<span class="token punctuation">:</span> <span class="token string">'9:00~13:00'</span><span class="token punctuation">,</span>
+     space<span class="token punctuation">:</span> <span class="token string">'A'</span> 
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  method<span class="token punctuation">:</span> <span class="token string">'cancel'</span> 
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//用户预定订单</span>
+<span class="token punctuation">{</span> 
+  data<span class="token punctuation">:</span><span class="token punctuation">{</span> 
+     user<span class="token punctuation">:</span> <span class="token string">'u123'</span><span class="token punctuation">,</span>
+     date<span class="token punctuation">:</span> <span class="token string">'2016-06-04'</span><span class="token punctuation">,</span>
+     time<span class="token punctuation">:</span> <span class="token string">'9:00~13:00'</span><span class="token punctuation">,</span>
+     space<span class="token punctuation">:</span> <span class="token string">'A'</span> 
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  method<span class="token punctuation">:</span> <span class="token string">'booking'</span> 
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//如果用户输入的格式不符合系统规范返回</span>
+Error<span class="token punctuation">:</span> the booking is invalid<span class="token operator">!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>writeData.js</code>接受isCorrect传过来的数据，同时对数据进行检查</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token punctuation">{</span> 
+  data<span class="token punctuation">:</span><span class="token punctuation">{</span> 
+     user<span class="token punctuation">:</span> <span class="token string">'u123'</span><span class="token punctuation">,</span>
+     date<span class="token punctuation">:</span> <span class="token string">'2016-06-04'</span><span class="token punctuation">,</span>
+     time<span class="token punctuation">:</span> <span class="token string">'9:00~13:00'</span><span class="token punctuation">,</span>
+     space<span class="token punctuation">:</span> <span class="token string">'A'</span> 
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  method<span class="token punctuation">:</span> <span class="token string">'booking'</span> 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>writeData.js</code>输出的数据，即对全局变量进行一次重写</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token punctuation">{</span>
+    <span class="token string">"A"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"2016-06-04"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"today"</span><span class="token punctuation">:</span> <span class="token string">"Weekend"</span><span class="token punctuation">,</span>
+            <span class="token string">"cencel"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"usedTime"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"9:00~13:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"u123"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"9:00~13:00"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//如果用户预定的订单与全局变量冲突</span>
+<span class="token comment" spellcheck="true">//输出</span>
+Error<span class="token punctuation">:</span> the booking conflicts <span class="token keyword">with</span> existing bookings<span class="token operator">!</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>cancelBook.js</code>接受isCorrect传过来的数据</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token punctuation">{</span> 
+  data<span class="token punctuation">:</span><span class="token punctuation">{</span> 
+     user<span class="token punctuation">:</span> <span class="token string">'u123'</span><span class="token punctuation">,</span>
+     date<span class="token punctuation">:</span> <span class="token string">'2016-06-04'</span><span class="token punctuation">,</span>
+     time<span class="token punctuation">:</span> <span class="token string">'9:00~13:00'</span><span class="token punctuation">,</span>
+     space<span class="token punctuation">:</span> <span class="token string">'A'</span> 
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  method<span class="token punctuation">:</span> <span class="token string">'cancel'</span> 
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>cancelBook.js</code>输出的数据，，即对全局变量进行一次重写</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token punctuation">{</span>
+    <span class="token string">"A"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"2016-06-04"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"today"</span><span class="token punctuation">:</span> <span class="token string">"Weekend"</span><span class="token punctuation">,</span>
+            <span class="token string">"cencel"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"9:00~13:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"usedTime"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//如果用户取消的订单与全局变量冲突</span>
+<span class="token comment" spellcheck="true">//输出</span>
+Error<span class="token punctuation">:</span> the booking being cancelled does not exist
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>printIncome.js</code>接受全局变量</p>
+<pre class="language-javascript {.line-numbers} line-numbers"><span class="token punctuation">{</span>
+    <span class="token string">"A"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+        <span class="token string">"2017-08-01"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token string">"today"</span><span class="token punctuation">:</span><span class="token string">"workday"</span><span class="token punctuation">,</span>
+            <span class="token string">"usedTime"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"18:00~20:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"cancelled"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"19:00~22:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"U003"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"18:00~20:00"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"B"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+        <span class="token string">"2017-08-02"</span><span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token string">"today"</span><span class="token punctuation">:</span><span class="token string">"workday"</span><span class="token punctuation">,</span>
+            <span class="token string">"usedTime"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"13:00~17:00"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token string">"U003"</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"13:00~17:00"</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p><code>printIncome.js</code>打印收入汇总</p>
+<pre class="language-javascript {.line-numbers} line-numbers">收入汇总
+<span class="token operator">--</span><span class="token operator">-</span>
+场地：A
+<span class="token number">2017</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token number">19</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token operator">~</span><span class="token number">22</span><span class="token punctuation">:</span><span class="token number">00</span> 违约金 <span class="token number">100</span>元
+<span class="token number">2017</span><span class="token operator">-</span><span class="token number">08</span><span class="token operator">-</span><span class="token number">01</span> <span class="token number">18</span><span class="token punctuation">:</span><span class="token number">00</span><span class="token operator">~</span><span class="token number">20</span><span class="token punctuation">:</span><span class="token number">00</span> <span class="token number">160</span>元
+小计：<span class="token number">260</span>元
+<span class="token operator">--</span><span class="token operator">-</span>
+总计 <span class="token number">260</span>元
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+<p>具体数据关系</p>
 <h2 class="mume-header" id="iscorrectjs"><code>isCorrect.js</code></h2>
 
 <p>验证用户的信息输入与系统要求是否一致</p>
@@ -229,8 +413,14 @@ function isTime(date) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+2016-10-01
+2016-13-12
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//2016-10-01
+true
+//2016-13-12
+false
 </pre>
 <p>第二个函数 checkTime(time)</p>
 <pre class="language-">//&#x5982;&#x679C;&#x65F6;&#x95F4;&#x6B63;&#x786E;&#x8FD4;&#x56DE;true&#x5982;&#x679C;&#x65F6;&#x95F4;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;false
@@ -251,8 +441,17 @@ function checkTime(time) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+9:00~10:00
+9:00~9:00
+9:00~12:10
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//9:00~10:00
+true
+//9:00~9:00
+false
+//9:00~12:10
+false
 </pre>
 <p>第三个函数 checkUserInput(ReservationArray)</p>
 <pre class="language-">//&#x8F93;&#x5165;&#x6B63;&#x786E;&#x8FD4;&#x56DE;true&#x8F93;&#x5165;&#x9519;&#x8BEF;&#x8FD4;&#x56DE;false
@@ -277,8 +476,14 @@ function checkUserInput(ReservationArray) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+U123 2016-10-01 9:00~10:00
+U123 2016-13-01 8:00~11:00
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//U123 2016-10-01 9:00~10:00
+true
+//U123 2016-13-01 8:00~11:00
+false
 </pre>
 <p>第四个函数 changeData(ReservationArray)</p>
 <pre class="language-">//&#x6539;&#x53D8;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
@@ -310,8 +515,30 @@ function changeData(ReservationArray) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+[&quot;U123&quot;,&quot;2016-10-01&quot;,&quot;9:00~10:00&quot;,&quot;A&quot;,&quot;C&quot;]
+[&quot;U123&quot;,&quot;2016-10-12&quot;,&quot;9:00~10:00&quot;,&quot;A&quot;]
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//[&quot;U123&quot;,&quot;2016-10-01&quot;,&quot;9:00~10:00&quot;,&quot;A&quot;,&quot;C&quot;]
+{
+    data:{
+        user: &quot;U123&quot;,
+        date: &quot;2016-10-01&quot;,
+        time: &quot;9:00~10:00&quot;,
+        space: &quot;A&quot;
+    },
+    method: &quot;cancel&quot;
+}
+//[&quot;U123&quot;,&quot;2016-10-12&quot;,&quot;9:00~10:00&quot;,&quot;A&quot;]
+{
+    data:{
+        user: &quot;U123&quot;,
+        date: &quot;2016-10-12&quot;,
+        time: &quot;9:00~10:00&quot;,
+        space: &quot;A&quot;
+    },
+    method: &quot;booking&quot;
+}
 </pre>
 <p>第主函数 isCorrect(Reservation)</p>
 <pre class="language-">//&#x9A8C;&#x8BC1;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x4E3B;&#x51FD;&#x6570;
@@ -338,8 +565,33 @@ function isCorrect(Reservation) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+U123 2016-10-1 8:00~20:00 A
+U123 2016-10-01 9:00~20:00 A
+U123 2016-10-01 9:00~20:00 A C
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//U123 2016-10-1 8:00~20:00 A
+Error: the booking is invalid!
+//U123 2016-10-01 9:00~20:00 A
+{
+    data:{
+        user: &apos;U123&apos;,
+        date: &apos;2016-10-01&apos;,
+        time: &apos;9:00~20:00&apos;,
+        space: &apos;A&apos;
+    },
+    method: &apos;booking&apos;
+}
+//U123 2016-10-01 9:00~20:00 A C
+{
+    data:{
+        user: &apos;U123&apos;,
+        date: &apos;2016-10-01&apos;,
+        time: &apos;9:00~20:00&apos;,
+        space: &apos;A&apos;
+    },
+    method: &apos;cancel&apos;
+}
 </pre>
 <h2 class="mume-header" id="cancelbookjs"><code>cancelBook.js</code></h2>
 
@@ -373,8 +625,54 @@ function cancelBook(customerList, customerCancel) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+//&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+ let customerList = {
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;18:00~20:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;18:00~20:00&quot;]
+        }
+    }
+};
+let data = {
+    user: &apos;u123&apos;,
+    date: &apos;2016-06-04&apos;,
+    time: &apos;9:00~13:00&apos;,
+    space: &apos;A&apos;
+};
+//&#x7B2C;&#x4E8C;&#x7EC4;&#x53C2;&#x6570;
+let customerList = {
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;9:00~13:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;9:00~13:00&quot;]
+        }
+    }
+};
+let data = {
+    user: &apos;U003&apos;,
+    date: &apos;2017-08-01&apos;,
+    time: &apos;9:00~13:00&apos;,
+    space: &apos;A&apos;
+};
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+&quot;Error: the booking being cancelled does not exist&quot;
+//&#x7B2C;&#x4E8C;&#x7EC4;&#x53C2;&#x6570;
+{
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;,&quot;9:00~13:00&quot;]
+        }
+    }
+}
 </pre>
 <h2 class="mume-header" id="writedatajs"><code>writeData.js</code></h2>
 
@@ -399,8 +697,14 @@ function checkConflictsTime(usedTime, time) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+[&quot;9:00~11:00&quot;,&quot;13:00~14:00&quot;],&quot;10:00~12:00&quot;
+[&quot;9:00~11:00&quot;,&quot;13:00~14:00&quot;],&quot;11:00~12:00&quot;
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//[&quot;9:00~11:00&quot;,&quot;13:00~14:00&quot;],&quot;10:00~12:00&quot;
+false
+//[&quot;9:00~11:00&quot;,&quot;13:00~14:00&quot;],&quot;11:00~12:00&quot;
+true
 </pre>
 <p>第主函数 writeData(customerList, customerNeed)</p>
 <pre class="language-">//&#x5199;&#x5165;&#x6570;&#x636E;&#x7684;&#x4E3B;&#x51FD;&#x6570;
@@ -433,8 +737,61 @@ function writeData(customerList, customerNeed) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+//&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+let customerList = {
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;9:00~13:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;9:00~13:00&quot;]
+        }
+    }
+};
+let data = {
+    user: &apos;U004&apos;,
+    date: &apos;2017-08-02&apos;,
+    time: &apos;9:00~13:00&apos;,
+    space: &apos;A&apos;
+};
+
+//&#x7B2C;&#x4E8C;&#x7EC4;&#x53C2;&#x6570;
+let customerList = {
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;9:00~13:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;9:00~13:00&quot;]
+        }
+    }
+};
+let data = {
+    user: &apos;U004&apos;,
+    date: &apos;2017-08-01&apos;,
+    time: &apos;9:00~13:00&apos;,
+    space: &apos;A&apos;
+};
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+{
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;9:00~13:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;9:00~13:00&quot;]
+        },
+        &quot;2017-08-02&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;9:00~13:00&quot;],
+            &quot;U004&quot;: [&quot;9:00~13:00&quot;]
+        }
+    }
+};
+//&#x7B2C;&#x4E8C;&#x7EC4;&#x53C2;&#x6570;
+&quot;Error: the booking conflicts with existing bookings!&quot;
 </pre>
 <h2 class="mume-header" id="printincomejs"><code>printIncome.js</code></h2>
 
@@ -465,8 +822,19 @@ function calculationWeekendTime(firstTime, lastTime, weekend) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+9,
+10
+let weekend = {
+    &quot;cancel&quot;: 0.25,
+    &quot;12&quot;: 40,
+    &quot;18&quot;: 50,
+    &quot;22&quot;: 60
+};
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+40
 </pre>
 <p>第二个函数 calculationWorkdayTime(firstTime, lastTime, workday)</p>
 <pre class="language-">//&#x5C06;&#x7528;&#x6237;&#x5728;&#x5DE5;&#x4F5C;&#x65E5;&#x9884;&#x5B9A;&#x7684;&#x4EFB;&#x610F;&#x65F6;&#x95F4;&#x7AEF;&#x8F6C;&#x5316;&#x4E3A;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#x6BB5;&#x6765;&#x6536;&#x8D39;&#xFF0C;&#x8F93;&#x51FA;&#x8BE5;&#x65F6;&#x95F4;&#x6BB5;&#x7528;&#x6237;&#x7684;&#x8D39;&#x7528;
@@ -511,8 +879,20 @@ function calculationWorkdayTime(firstTime, lastTime, workday) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+9,
+10
+let workday = {
+    &quot;cancel&quot;: 0.5,
+    &quot;12&quot;: 30,
+    &quot;18&quot;: 50,
+    &quot;20&quot;: 80,
+    &quot;22&quot;: 60
+};
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+//&#x7B2C;&#x4E00;&#x7EC4;&#x53C2;&#x6570;
+30
 </pre>
 <p>第三个函数 splitTime(customerTimeList)</p>
 <pre class="language-">//&#x5206;&#x5272;&#x7528;&#x6237;&#x7684;&#x65F6;&#x95F4;&#x5E76;&#x8BA1;&#x7B97;&#x4EF7;&#x683C;&#x7684;&#x51FD;&#x6570;
@@ -574,8 +954,18 @@ function splitTime(customerTimeList) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+{
+    &quot;today&quot;: &quot;workday&quot;,
+    &quot;usedTime&quot;: [&quot;18:00~20:00&quot;],
+    &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+    &quot;U003&quot;: [&quot;18:00~20:00&quot;]
+}
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+{ 
+    cancelled: [ [ &apos;19:00~22:00&apos;, 100 ] ],
+    booking: [ [ &apos;18:00~20:00&apos;, 160 ] ] 
+}
 </pre>
 <p>第四个函数 splitCustomerList(customerList)</p>
 <pre class="language-">//&#x7ED9;splitTime()&#x63D0;&#x4F9B;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;
@@ -592,8 +982,26 @@ function splitCustomerList(customerList) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+{
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;18:00~20:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;18:00~20:00&quot;]
+        }
+    }
+}
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+{
+&quot;A&quot;:{
+    &quot;2017-08-01&quot;:{
+        &quot;cancelled&quot;:[[&quot;19:00~22:00&quot;,100]],
+        &quot;booking&quot;:[[&quot;18:00~20:00&quot;,160]]
+        }
+    }
+}
 </pre>
 <p>第主函数 printIncome(customerList)</p>
 <pre class="language-">//&#x6253;&#x5370;&#x7528;&#x6237;&#x7684;&#x6536;&#x5165;&#x6C47;&#x603B;&#x7684;&#x4E3B;&#x51FD;&#x6570;
@@ -625,18 +1033,103 @@ function printIncome(customerList) {
 }
 </pre>
 <pre class="language-">//&#x4F20;&#x5165;&#x53C2;&#x6570;
+{
+    &quot;A&quot;: {
+        &quot;2017-08-01&quot;: {
+            &quot;today&quot;: &quot;workday&quot;,
+            &quot;usedTime&quot;: [&quot;18:00~20:00&quot;],
+            &quot;cancelled&quot;: [&quot;19:00~22:00&quot;],
+            &quot;U003&quot;: [&quot;18:00~20:00&quot;]
+        }
+    }
+}
 </pre>
 <pre class="language-">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+&#x6536;&#x5165;&#x6C47;&#x603B;
+---
+&#x573A;&#x5730;&#xFF1A;A
+2017-08-01 19:00~22:00 &#x8FDD;&#x7EA6;&#x91D1; 100&#x5143;
+2017-08-01 18:00~20:00 160&#x5143;
+&#x5C0F;&#x8BA1;&#xFF1A;260&#x5143;
+---
+&#x603B;&#x8BA1; 260&#x5143;
 </pre>
+<h2 class="mume-header" id="tasking&#x4EFB;&#x52A1;&#x5206;&#x89E3;">Tasking任务分解</h2>
+
+<h4 class="mume-header" id="1-&#x9884;&#x8BA2;&#x573A;&#x5730;">1: 预订场地</h4>
+
+<p>input: userId [String],date [String],<br>
+time [String],space [String]</p>
+<p>output: Result [String]</p>
+<h4 class="mume-header" id="2-&#x53D6;&#x6D88;&#x9884;&#x8BA2;">2: 取消预订</h4>
+
+<p>input: userId [String],date [String],<br>
+time [String],space [String],cancel [String]</p>
+<p>output: CancelResult [String]</p>
+<h4 class="mume-header" id="3-&#x6253;&#x5370;&#x6536;&#x5165;&#x6C47;&#x603B;">3: 打印收入汇总</h4>
+
+<p>input: customerList [Object]</p>
+<p>output: incomeInformation [String]</p>
+<h4 class="mume-header" id="4-&#x5224;&#x65AD;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x957F;&#x5EA6;&#x548C;&#x5730;&#x70B9;&#x662F;&#x5426;&#x5408;&#x7406;">4: 判断用户输入的长度和地点是否合理</h4>
+
+<p>input: userId [String],date [String],<br>
+time [String],space [String],cancel [String]</p>
+<p>output: checkUserInput [Boolean]</p>
+<h4 class="mume-header" id="5-&#x5224;&#x65AD;&#x9884;&#x8BA2;&#x65E5;&#x671F;&#x662F;&#x5426;&#x5408;&#x7406;">5: 判断预订日期是否合理</h4>
+
+<p>input: date [String]</p>
+<p>output: isTime [Boolean]</p>
+<h4 class="mume-header" id="6-&#x5224;&#x65AD;&#x9884;&#x8BA2;&#x8D77;&#x59CB;&#x65F6;&#x95F4;&#x662F;&#x5426;&#x5408;&#x7406;">6: 判断预订起始时间是否合理</h4>
+
+<p>input: time [String]</p>
+<p>output: checkTime [Boolean]</p>
+<h4 class="mume-header" id="7&#x8F93;&#x51FA;&#x7528;&#x6237;&#x9700;&#x6C42;&#x7684;&#x7ED3;&#x679C;">7：输出用户需求的结果</h4>
+
+<p>input: userId [String],date [String],<br>
+time [String],space [String],cancel [String]</p>
+<p>output: isCorrect [Object]</p>
+<h4 class="mume-header" id="8-&#x5C06;&#x7528;&#x6237;&#x9884;&#x5B9A;&#x7684;&#x4FE1;&#x606F;&#x5199;&#x5165;&#x5168;&#x5C40;&#x53D8;&#x91CF;">8: 将用户预定的信息写入全局变量</h4>
+
+<p>input: isCorrect [Object]</p>
+<p>output: customerList [Object]</p>
+<h4 class="mume-header" id="9-&#x5C06;&#x7528;&#x6237;&#x53D6;&#x6D88;&#x9884;&#x5B9A;&#x7684;&#x4FE1;&#x606F;&#x4ECE;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5185;&#x5220;&#x9664;">9: 将用户取消预定的信息从全局变量内删除</h4>
+
+<p>input: isCorrect [Object]</p>
+<p>output: customerList [Object]</p>
+<h4 class="mume-header" id="10-&#x8F93;&#x51FA;&#x6536;&#x5165;&#x6C47;&#x603B;">10: 输出收入汇总</h4>
+
+<p>input: customerList [Object]</p>
+<p>output: printIncome [String]</p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95">技术面试</a>
+<li><a href="#%E7%BE%BD%E6%AF%9B%E7%90%83%E9%A6%86">羽毛球馆</a>
 <ul>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95">项目目录</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E8%BF%90%E8%A1%8C%E4%B8%BB%E7%A8%8B%E5%BA%8F">关于运行主程序</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C">项目运行结果</a>
+<ul>
+<li><a href="#%E6%B5%8B%E8%AF%951">测试1</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%952">测试2</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E8%BF%90%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">关于运行单元测试</a></li>
+<li><a href="#%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E5%85%B3%E7%B3%BB">项目的数据关系</a></li>
 <li><a href="#iscorrectjs"><code>isCorrect.js</code></a></li>
 <li><a href="#cancelbookjs"><code>cancelBook.js</code></a></li>
 <li><a href="#writedatajs"><code>writeData.js</code></a></li>
 <li><a href="#printincomejs"><code>printIncome.js</code></a></li>
+<li><a href="#tasking%E4%BB%BB%E5%8A%A1%E5%88%86%E8%A7%A3">Tasking任务分解</a><br>
+* <a href="#1-%E9%A2%84%E8%AE%A2%E5%9C%BA%E5%9C%B0">1: 预订场地</a><br>
+* <a href="#2-%E5%8F%96%E6%B6%88%E9%A2%84%E8%AE%A2">2: 取消预订</a><br>
+* <a href="#3-%E6%89%93%E5%8D%B0%E6%94%B6%E5%85%A5%E6%B1%87%E6%80%BB">3: 打印收入汇总</a><br>
+* <a href="#4-%E5%88%A4%E6%96%AD%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E7%9A%84%E9%95%BF%E5%BA%A6%E5%92%8C%E5%9C%B0%E7%82%B9%E6%98%AF%E5%90%A6%E5%90%88%E7%90%86">4: 判断用户输入的长度和地点是否合理</a><br>
+* <a href="#5-%E5%88%A4%E6%96%AD%E9%A2%84%E8%AE%A2%E6%97%A5%E6%9C%9F%E6%98%AF%E5%90%A6%E5%90%88%E7%90%86">5: 判断预订日期是否合理</a><br>
+* <a href="#6-%E5%88%A4%E6%96%AD%E9%A2%84%E8%AE%A2%E8%B5%B7%E5%A7%8B%E6%97%B6%E9%97%B4%E6%98%AF%E5%90%A6%E5%90%88%E7%90%86">6: 判断预订起始时间是否合理</a><br>
+* <a href="#7%E8%BE%93%E5%87%BA%E7%94%A8%E6%88%B7%E9%9C%80%E6%B1%82%E7%9A%84%E7%BB%93%E6%9E%9C">7：输出用户需求的结果</a><br>
+* <a href="#8-%E5%B0%86%E7%94%A8%E6%88%B7%E9%A2%84%E5%AE%9A%E7%9A%84%E4%BF%A1%E6%81%AF%E5%86%99%E5%85%A5%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">8: 将用户预定的信息写入全局变量</a><br>
+* <a href="#9-%E5%B0%86%E7%94%A8%E6%88%B7%E5%8F%96%E6%B6%88%E9%A2%84%E5%AE%9A%E7%9A%84%E4%BF%A1%E6%81%AF%E4%BB%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%86%85%E5%88%A0%E9%99%A4">9: 将用户取消预定的信息从全局变量内删除</a><br>
+* <a href="#10-%E8%BE%93%E5%87%BA%E6%94%B6%E5%85%A5%E6%B1%87%E6%80%BB">10: 输出收入汇总</a></li>
 </ul>
 </li>
 </ul>
