@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>手拉手 Vue &amp; 百度地图 | Heikunan</title>
+    <meta name="description" content="欢迎来到我的个人博客">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.1861d99f.css" as="style"><link rel="preload" href="/assets/js/app.54a4c6e7.js" as="script"><link rel="preload" href="/assets/js/12.eec924e6.js" as="script"><link rel="prefetch" href="/assets/js/7.ac437e72.js"><link rel="prefetch" href="/assets/js/2.cda51ec0.js"><link rel="prefetch" href="/assets/js/3.ea82c702.js"><link rel="prefetch" href="/assets/js/4.f12c61c7.js"><link rel="prefetch" href="/assets/js/5.a671ced2.js"><link rel="prefetch" href="/assets/js/6.96985fc5.js"><link rel="prefetch" href="/assets/js/8.2cedd37d.js"><link rel="prefetch" href="/assets/js/9.1ffe2789.js"><link rel="prefetch" href="/assets/js/10.5f40234b.js"><link rel="prefetch" href="/assets/js/11.bd767abf.js"><link rel="prefetch" href="/assets/js/13.d01416e7.js"><link rel="prefetch" href="/assets/js/14.f41a4c94.js"><link rel="prefetch" href="/assets/js/15.0bb8ddfb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1861d99f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Heikunan</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/FrontEnd/" class="nav-link router-link-active">前端篇</a></div><div class="nav-item"><a href="/BackEnd/" class="nav-link">后端篇</a></div><div class="nav-item"><a href="/DataBase/" class="nav-link">数据库篇</a></div><div class="nav-item"><a href="/Other/" class="nav-link">其他</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">主页</a></div><div class="nav-item"><a href="/FrontEnd/" class="nav-link router-link-active">前端篇</a></div><div class="nav-item"><a href="/BackEnd/" class="nav-link">后端篇</a></div><div class="nav-item"><a href="/DataBase/" class="nav-link">数据库篇</a></div><div class="nav-item"><a href="/Other/" class="nav-link">其他</a></div> <!----></nav>  <!----> </div> <div class="page"> <div class="content"><h1 id="手拉手-vue-百度地图"><a href="#手拉手-vue-百度地图" aria-hidden="true" class="header-anchor">#</a> 手拉手 Vue &amp; 百度地图</h1> <h2 id="项目背景"><a href="#项目背景" aria-hidden="true" class="header-anchor">#</a> 项目背景</h2> <hr> <p>旧的运输监控的系统是公司购买的星软 GPS 系统(第三方公司)，现在随着业务的增长，旧的系统不能满足现在的需求，所以才有了现在的新运输监控系统。</p> <h2 id="项目目录"><a href="#项目目录" aria-hidden="true" class="header-anchor">#</a> 项目目录</h2> <hr> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">|</span><span class="token operator">--</span> mapPath
+<span class="token operator">|</span>  <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> components <span class="token comment">//组件文件夹</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> BaiDuMap<span class="token punctuation">.</span>vue        <span class="token comment">//百度地图核心</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> ColorSetDialog<span class="token punctuation">.</span>vue  <span class="token comment">//颜色设置弹窗</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> FooterTable<span class="token punctuation">.</span>vue     <span class="token comment">//底部Footer容器</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> RightButton<span class="token punctuation">.</span>vue     <span class="token comment">//右侧表单</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> TableContainer<span class="token punctuation">.</span>vue  <span class="token comment">//底部Tab选项栏</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> TableContainerBottom<span class="token punctuation">.</span>vue <span class="token comment">//底部表格核心</span>
+<span class="token operator">|</span>      <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> TopHeader<span class="token punctuation">.</span>vue       <span class="token comment">//顶部表单</span>
+<span class="token operator">|</span>  <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> config<span class="token punctuation">.</span>js               <span class="token comment">//公共配置文件</span>
+<span class="token operator">|</span>  <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> http<span class="token punctuation">.</span>js                 <span class="token comment">//接口据合文件</span>
+<span class="token operator">|</span>  <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> index<span class="token punctuation">.</span>vue               <span class="token comment">//根目录</span>
+<span class="token operator">|</span>  <span class="token operator">|</span><span class="token operator">--</span><span class="token operator">-</span> timeTool<span class="token punctuation">.</span>js             <span class="token comment">//时间处理文件</span>
+</code></pre></div><h2 id="百度地图密集点渲染开发的三种思路"><a href="#百度地图密集点渲染开发的三种思路" aria-hidden="true" class="header-anchor">#</a> 百度地图密集点渲染开发的三种思路</h2> <hr> <h3 id="黑铁时代-百度地图原生开发"><a href="#黑铁时代-百度地图原生开发" aria-hidden="true" class="header-anchor">#</a> 黑铁时代-百度地图原生开发</h3> <p>所谓的原生地图开发，指的是在一个 <code>html</code> 文件中的 <code>&lt;script&gt;&lt;/script&gt;</code> 标签中，不断的堆叠地图的代码，如果项目比较复杂的话，就像三年前 <code>jQuery</code> 时代，写一大堆意大利面条式的代码，非常难以维护，以现代前端开发的角度来看，也不会采用这种思路，而且如果要渲染大量的自定义的点的话，要使用百度地图的 <code>new Bmap.Marker()</code> 方法，数量过大的话，浏览器会出现卡顿的情况</p> <hr> <h3 id="青铜时代-函数驱动地图渲染-工厂模式"><a href="#青铜时代-函数驱动地图渲染-工厂模式" aria-hidden="true" class="header-anchor">#</a> 青铜时代-函数驱动地图渲染-工厂模式</h3> <p>其核心的方法是在百度地图核心的 Vue 文件中写一个 <code>initMap()</code> 函数</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+    <span class="token function">initMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMap<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token string">&quot;mapcontainer&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        enableMapClick<span class="token punctuation">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">//doSomeThings~~~</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在每次数据改变的时候，调用 initMap 方法，实现百度地图的重绘</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>watch<span class="token punctuation">:</span><span class="token punctuation">{</span>
+  <span class="token string">'getCurrectColorData'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">'getMapPoints'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">'getFencesPoints'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string">'getResetMap'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>initMap()</code> 函数就像一个工厂，不断的重新去生产一个新的对象，如果在一个页面中，经常调用这个函数的化，会产生大量垃圾，造成资源没有必要的浪费，同时如果只是更新了部分的数据的话，其他数据没有发生改变，也会调用 <code>initMap()</code> ，这样会造成 <code>CPU</code> 做一些无用的计算，性能就会大大的降低。</p> <hr> <h3 id="白银时代-数据驱动地图渲染-单例模式"><a href="#白银时代-数据驱动地图渲染-单例模式" aria-hidden="true" class="header-anchor">#</a> 白银时代-数据驱动地图渲染-单例模式</h3> <p>要做成数据驱动地图渲染必须满足一下几个条件</p> <ol><li>全局只创建一个百度地图对象</li> <li>百度地图对象支持动态增加和删除子对象</li> <li>数据改变时地图和视图绑定自动更新</li></ol> <p>首先在 <code>BaiDuMap.vue</code> 文件中提供一个地图容器</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>mapcontainer<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>然后再借助 Vue 的生命周期中的 <code>mounted()</code> 钩子在 <code>DOM</code> 加载结束的时候挂上百度地图，同时将其挂载到 <code>Vue.prototype</code> 将其提升为一个全局的变量</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMap<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token string">&quot;mapcontainer&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        enableMapClick<span class="token punctuation">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Vue<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>map <span class="token operator">=</span> map
+    <span class="token comment">//doSomeThings</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样就可以在各个函数中操作百度地图了</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+    <span class="token function">mapAddOverlay</span><span class="token punctuation">(</span>mapPoints <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> <span class="token keyword">this</span><span class="token punctuation">.</span>map<span class="token punctuation">.</span>De<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">let</span> infoBox <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>map<span class="token punctuation">.</span>De<span class="token punctuation">[</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>i<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">]</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>infoBox<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`_isOpen`</span></span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> infoBox<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`_content`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                infoBox<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">const</span> geoc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMap<span class="token punctuation">.</span>Geocoder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> allPoints <span class="token operator">=</span> <span class="token punctuation">[</span>mapPoints<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> mapPoints<span class="token punctuation">[</span>mapPoints<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+        allPoints<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>v<span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+            geoc<span class="token punctuation">.</span><span class="token function">getLocation</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token punctuation">(</span>rs<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+                <span class="token keyword">const</span> addComp <span class="token operator">=</span> rs<span class="token punctuation">.</span>addressComponents<span class="token punctuation">;</span>
+                <span class="token keyword">const</span> infowindowHtml <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+                    &lt;div&gt;
+                        &lt;div&gt;
+                            &lt;div class='infowindow-item'&gt;
+                                &lt;span&gt;车牌号：&lt;/span&gt;&lt;span&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>v<span class="token punctuation">.</span>CarData<span class="token punctuation">.</span>carCode<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class='infowindow-item'&gt;
+                                &lt;span&gt;信号点状态：&lt;/span&gt;&lt;span&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>v<span class="token punctuation">.</span>CarData<span class="token punctuation">.</span>gpslock<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class='infowindow-item'&gt;
+                                &lt;span&gt;速度：&lt;/span&gt;&lt;span&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>v<span class="token punctuation">.</span>CarData<span class="token punctuation">.</span>speed<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class='infowindow-item'&gt;
+                                &lt;span&gt;GPS时间：&lt;/span&gt;&lt;span&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>v<span class="token punctuation">.</span>CarData<span class="token punctuation">.</span>gpsTime<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class='infowindow-bottom'&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;`</span></span>
+                <span class="token keyword">const</span> infowindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMapLib<span class="token punctuation">.</span>InfoBox</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>map<span class="token punctuation">,</span>infowindowHtml<span class="token punctuation">,</span><span class="token punctuation">{</span>
+                    closeIconUrl<span class="token punctuation">:</span><span class="token string">'/static/close.png'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token keyword">const</span> InfoWindowMarker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMap<span class="token punctuation">.</span>Marker</span><span class="token punctuation">(</span>rs<span class="token punctuation">.</span>point<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                infowindow<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>InfoWindowMarker<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>map<span class="token punctuation">.</span><span class="token function">removeOverlay</span><span class="token punctuation">(</span>Exbigline<span class="token punctuation">)</span>
+        <span class="token keyword">const</span> overPoint <span class="token operator">=</span> mapPoints
+        <span class="token keyword">const</span> Exbigline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BMap<span class="token punctuation">.</span>Polyline</span><span class="token punctuation">(</span>mapPoints<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            strokeColor<span class="token punctuation">:</span><span class="token string">&quot;blue&quot;</span><span class="token punctuation">,</span>
+            strokeWeight<span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">,</span>
+            strokeOpacity<span class="token punctuation">:</span><span class="token number">0.5</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//增加折线</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>map<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>Exbigline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>把需要和数据绑定的覆盖物单独写到 <code>BaiDuMap.vue</code> 地图核心的 <code>methods</code> 中然后再用<code>watch</code>函数对其监听,此时的 <code>initMap()</code> 方法就变成处理轨迹点的方法了，把核心的逻辑分割成几个小的部分，方便后期的维护和修改</p> <div class="language- extra-class"><pre class="language-text"><code>watch:{
+  'getCurrectColorData'(){
+      this.initMap()
+      this.mapAddFencesPoints()
+  },
+  'getBaiduMapPoints'(){
+      this.initMap()
+  },
+  'getFencesPoints'(){
+      this.mapAddFencesPoints()
+  },
+  'getResetMap'(){
+      this.initMap()
+      this.mapAddFencesPoints()
+  },
+  'getStartAndEndPoints'(nextVal){
+      this.mapAddOverlay(nextVal)
+  }
+}
+</code></pre></div><h2 id="后期优化的点"><a href="#后期优化的点" aria-hidden="true" class="header-anchor">#</a> 后期优化的点</h2> <hr> <ul><li>[x] 跨组件渲染地图覆盖物</li> <li>[x] 减少覆盖物渲染次数</li> <li>[x] 核心数据聚合</li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/12.eec924e6.js" defer></script><script src="/assets/js/app.54a4c6e7.js" defer></script>
+  </body>
+</html>
